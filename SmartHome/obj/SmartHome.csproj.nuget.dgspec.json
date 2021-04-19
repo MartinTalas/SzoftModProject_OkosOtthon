@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {}
+    "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {
+    "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
+        "projectUniqueName": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
         "projectName": "SmartHome",
-        "projectPath": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
-        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\obj\\",
+        "projectPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
+        "packagesPath": "C:\\Users\\Beni\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Beni\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
