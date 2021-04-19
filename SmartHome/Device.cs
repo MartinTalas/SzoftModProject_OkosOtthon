@@ -10,11 +10,12 @@ namespace SmartHome
         public string commandTurnOff { get; }
         public string commandTurnOn { get; }
         
-        public Device(string devicename ,string commandTurnOff, string commandTurnOn)
+        public Device(string devicename ,string commandTurnOn, string commandTurnOff)
         {
             this.devicename = devicename;
-            this.commandTurnOff = commandTurnOff;
             this.commandTurnOn = commandTurnOn;
+            this.commandTurnOff = commandTurnOff;
+            
         }
     }
 }
