@@ -1,0 +1,13 @@
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.exe
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.deps.json
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.runtimeconfig.json
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.runtimeconfig.dev.json
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.dll
+E:\git\SzoftModProject_OkosOtthon\SmartHome\bin\Debug\netcoreapp3.1\SmartHome.pdb
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.csprojAssemblyReference.cache
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.AssemblyInfoInputs.cache
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.AssemblyInfo.cs
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.csproj.CoreCompileInputs.cache
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.dll
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.pdb
+E:\git\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.genruntimeconfig.cache
