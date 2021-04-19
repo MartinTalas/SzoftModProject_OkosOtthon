@@ -15,6 +15,10 @@ namespace SmartHome
             Console.WriteLine(k.boilerState);
             Console.WriteLine(k.airConditionerState);
 
+            Loader loader = new Loader();
+            Subscribers subscribers = loader.loadSubscribers();
+            Console.WriteLine(loader.ToString());
+
             Console.ReadKey();
             
         }
