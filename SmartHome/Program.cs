@@ -9,8 +9,7 @@ namespace SmartHome
             Loader debug_loader = new Loader();
             Subscribers debug_subscribers = new Subscribers();
             debug_subscribers = debug_loader.loadSubscribers();
-            Console.WriteLine(debug_subscribers.subscribers.Count);
-            Console.WriteLine(debug_subscribers.subscribers[0].homeId);
+            Console.WriteLine(debug_loader.ToString());
         }
     }
 }

@@ -21,5 +21,15 @@ namespace SmartHome
             string jsonString = File.ReadAllText(file_name);
             loaded_subscribers = JsonSerializer.Deserialize<Subscribers>(jsonString);
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach (Subscriber element in loaded_subscribers.subscribers)
+            {
+                result += "[ Subscriber: " + element.subscriber + " with home ID: " + element.homeId+ " ]\n";
+            }
+            return result;
+       }
     }
 }
