@@ -37,18 +37,13 @@ namespace SmartHome
 
             Session s = new Session();
             string[] bemenet = responseFromServer.Split(",");
-
-            //Console.WriteLine(bemenet.Length);
-
-            //responseFromServer
             
             List<String> bemenet_2 = new List<String>();
             for (int i = 0;i < 4;i++)
             {
                 bemenet_2.Add(bemenet[i].Split(':')[1]);
             }
-            
-            
+
             s.sessionId = bemenet_2[0].Trim('"');
             s.temperature = Convert.ToDouble(bemenet_2[1].Replace(".", ","));
             s.boilerState = Convert.ToBoolean(bemenet_2[2]);

@@ -6,10 +6,17 @@ namespace SmartHome
     {
         static void Main(string[] args)
         {
-            Loader debug_loader = new Loader();
-            Subscribers debug_subscribers = new Subscribers();
-            debug_subscribers = debug_loader.loadSubscribers();
-            Console.WriteLine(debug_loader.ToString());
+            Monitor m = new Monitor();
+
+            Session k = m.getSession("KD34AF24DS");
+
+            Console.WriteLine(k.sessionId);
+            Console.WriteLine(k.temperature);
+            Console.WriteLine(k.boilerState);
+            Console.WriteLine(k.airConditionerState);
+
+            Console.ReadKey();
+            
         }
     }
 }
