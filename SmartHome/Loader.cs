@@ -19,7 +19,7 @@ namespace SmartHome
         private void loadFromJson()
         {
             string jsonString = File.ReadAllText(file_name);
-            loaded_subscribers = JsonSerializer.Deserialize<Subscribers>(jsonString);
+            this.loaded_subscribers = JsonSerializer.Deserialize<Subscribers>(jsonString);
         }
 
         public override string ToString()
