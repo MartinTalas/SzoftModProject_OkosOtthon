@@ -10,7 +10,7 @@ namespace SmartHomeProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Uraim, megbaszódunk");
+            Console.WriteLine("Test");
             Console.ReadKey();
         }
     }
