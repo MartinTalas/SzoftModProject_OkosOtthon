@@ -11,6 +11,8 @@ namespace SmartHomeProject
         static void Main(string[] args)
         {
             Console.WriteLine("Test");
+            Monitor m = new Monitor();
+            m.monitor_main();
             Console.ReadKey();
         }
     }
