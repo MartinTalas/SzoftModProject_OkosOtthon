@@ -28,7 +28,7 @@ namespace SmartHomeProject
             get;
             set;
         }
-        public List<Temperature> temperatures
+        public List<Temperature>temperatures
         {
             get;
             set;
