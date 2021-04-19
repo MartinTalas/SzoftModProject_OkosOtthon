@@ -8,6 +8,6 @@ namespace SmartHome
 {
     interface IDriver
     {
-        int sendCommand(Subscriber subs, bool boiler, bool ac);
+        public int sendCommand(Subscriber subs, bool boiler, bool ac);
     }
 }
