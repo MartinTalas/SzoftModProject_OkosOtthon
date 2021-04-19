@@ -6,7 +6,11 @@ namespace SmartHome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Loader debug_loader = new Loader();
+            Subscribers debug_subscribers = new Subscribers();
+            debug_subscribers = debug_loader.loadSubscribers();
+            Console.WriteLine(debug_subscribers.subscribers.Count);
+            Console.WriteLine(debug_subscribers.subscribers[0].homeId);
         }
     }
 }

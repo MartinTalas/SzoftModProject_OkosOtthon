@@ -1,0 +1,28 @@
+{
+	"subscribers":[
+	{
+		"subscriber":"John Smith",
+		"homeId":"KR323DE24W",
+		"boilerType":"Boiler 1200W",
+		"airConditionerType":"Air p5600",
+		"temperatures":[
+		{
+			"period":"00-08",
+			"temperature":20
+		},
+		{
+			"period":"08-12",
+			"temperature":21.5
+		},
+		{
+			"period":"12-16",
+			"temperature":22
+		},
+		{
+			"period":"16-24",
+			"temperature":23
+		}
+		]
+	}
+	]
+}
