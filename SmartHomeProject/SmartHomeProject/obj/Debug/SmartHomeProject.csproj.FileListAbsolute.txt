@@ -1,0 +1,7 @@
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\bin\Debug\SmartHomeProject.exe.config
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\bin\Debug\SmartHomeProject.exe
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\bin\Debug\SmartHomeProject.pdb
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\obj\Debug\SmartHomeProject.csprojAssemblyReference.cache
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\obj\Debug\SmartHomeProject.csproj.CoreCompileInputs.cache
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\obj\Debug\SmartHomeProject.exe
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHomeProject\SmartHomeProject\obj\Debug\SmartHomeProject.pdb
