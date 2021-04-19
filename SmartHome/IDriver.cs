@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartHomeProject
+namespace HomeProject
 {
     interface IDriver
     {
-        int sendCommand(Subscriber subs, bool boiler, bool ac);
+        public int sendCommand(Subscriber subs, bool boiler, bool ac);
     }
 }
