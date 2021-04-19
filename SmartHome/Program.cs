@@ -25,6 +25,10 @@ namespace SmartHome
 
             d.sendCommand(debug_subscribers.subscribers[0], true, false);
 
+            Loader loader = new Loader();
+            Subscribers subscribers = loader.loadSubscribers();
+            Console.WriteLine(loader.ToString());
+
             Console.ReadKey();
             
         }
