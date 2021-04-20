@@ -67,25 +67,35 @@ namespace SmartHome
             request.ContentType = "text/plain";
             request.Method = "POST";
 
-            string ujkefdrgtbhjnmfgkv=JsonSerializer.Serialize(new Command(subs.homeId, boilerCommand, airConditionerCommand));
-            Console.WriteLine(ujkefdrgtbhjnmfgkv);
+            string json_string =JsonSerializer.Serialize(new Command(subs.homeId, boilerCommand, airConditionerCommand));
+            Console.WriteLine(json_string);
 
             using (var stream = request.GetRequestStream())
             {
-                stream.Write(Encoding.UTF8.GetBytes(ujkefdrgtbhjnmfgkv), 0, Encoding.UTF8.GetBytes(ujkefdrgtbhjnmfgkv).Length);
+                stream.Write(Encoding.UTF8.GetBytes(json_string), 0, Encoding.UTF8.GetBytes(json_string).Length);
             }
 
+            StreamReader result;
+            int resultint = 404;
             HttpWebResponse httpResponse;
             try
             {
                 httpResponse = (HttpWebResponse)request.GetResponse();
+                
+                result = new StreamReader(httpResponse.GetResponseStream());
+                resultint = Convert.ToInt32(result.ReadToEnd());
+                Console.WriteLine(resultint);
             }
             catch (WebException ex)
             {
                 httpResponse = (HttpWebResponse)ex.Response;
+                Console.WriteLine(httpResponse.StatusDescription);
+                Console.WriteLine(httpResponse.StatusCode);
+                Console.WriteLine(httpResponse.ContentLength);
+                Console.WriteLine(resultint);
+                Console.WriteLine(ex.Message);
             }
-
-            return 404;
+            return resultint;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SmartHome
             Console.WriteLine(k.boilerState);
             Console.WriteLine(k.airConditionerState);
             
-            http://193.6.19.58:8182/smarthome/%7bhomeId%7d
+            //http://193.6.19.58:8182/smarthome/%7bhomeId%7d
 
             Driver d = new Driver();
 
@@ -23,11 +23,10 @@ namespace SmartHome
             Subscribers debug_subscribers = debug_loader.loadSubscribers();
 
 
-            d.sendCommand(debug_subscribers.subscribers[0], true, false);
+            d.sendCommand(debug_subscribers.subscribers[0], true, true);
 
-            Loader loader = new Loader();
-            Subscribers subscribers = loader.loadSubscribers();
-            Console.WriteLine(loader.ToString());
+            //DEBUG
+            //Console.WriteLine(debug_loader.ToString());
 
             Console.ReadKey();
             
