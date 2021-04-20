@@ -14,13 +14,15 @@ namespace SmartHome
         
         Dictionary<String, Device> deviceMap = new Dictionary<String, Device>();
 
-        Driver()
+        public Driver()
         {
-            deviceMap.Add("Boiler 1200W", new Device("Boiler 1200W","bX3434", "bX1232"));
-            deviceMap.Add("Boiler p5600", new Device("Boiler 1200W", "cX7898", "cX3452"));
+            deviceMap.Add("Boiler 1200W", new Device("Boiler 1200W", "bX3434", "bX1232"));
+            deviceMap.Add("Boiler p5600", new Device("Boiler p5600", "cX7898", "cX3452"));
+            deviceMap.Add("Boiler tw560", new Device("Boiler tw560", "dX3422", "dX111"));
 
-            deviceMap.Add("Air p5600", new Device("Boiler 1200W", "bX5676", "bX3421"));
-            deviceMap.Add("Air c320", new Device("Boiler 1200W", "cX3452", "cX5423"));
+            deviceMap.Add("Air p5600", new Device("Air p5600", "bX5676", "bX3421"));
+            deviceMap.Add("Air c320", new Device("Air c320", "cX3452", "cX5423"));
+            deviceMap.Add("Air rk110", new Device("Air rk110", "eX1111", "eX2222"));
         }
 
         class Command
@@ -33,15 +35,8 @@ namespace SmartHome
             {
                 this.homeId = homeId;
                 this.boilerCommand = boilerCommand;
-                this.boilerCommand = airConditionerCommand;
+                this.airConditionerCommand = airConditionerCommand;
             }
-        }
-
-        public class WeatherForecast
-        {
-            public DateTimeOffset Date { get; set; }
-            public int TemperatureCelsius { get; set; }
-            public string Summary { get; set; }
         }
 
         public int sendCommand(Subscriber subs, bool boiler, bool ac)
@@ -67,20 +62,30 @@ namespace SmartHome
                 airConditionerCommand = deviceMap[subs.airConditionerType].commandTurnOff;
             }
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://193.6.19.58:8182/smarthome/"+subs.homeId);
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
+            string url = "http://193.6.19.58:8182/smarthome/" + subs.homeId;
+            WebRequest request = WebRequest.Create(url);
+            request.ContentType = "text/plain";
+            request.Method = "POST";
 
-            var command = new Command(subs.homeId, boilerCommand, airConditionerCommand);
-            string jsonString = JsonSerializer.Serialize(command);
+            string ujkefdrgtbhjnmfgkv=JsonSerializer.Serialize(new Command(subs.homeId, boilerCommand, airConditionerCommand));
+            Console.WriteLine(ujkefdrgtbhjnmfgkv);
 
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            using (var stream = request.GetRequestStream())
             {
-                var res = streamReader.ReadToEnd();
-                Console.WriteLine("Eredmenyet:"+res);
-                return Convert.ToInt32(res);
+                stream.Write(Encoding.UTF8.GetBytes(ujkefdrgtbhjnmfgkv), 0, Encoding.UTF8.GetBytes(ujkefdrgtbhjnmfgkv).Length);
             }
+
+            HttpWebResponse httpResponse;
+            try
+            {
+                httpResponse = (HttpWebResponse)request.GetResponse();
+            }
+            catch (WebException ex)
+            {
+                httpResponse = (HttpWebResponse)ex.Response;
+            }
+
+            return 404;
         }
     }
 }
