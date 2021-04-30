@@ -9,7 +9,7 @@ using System.IO;
 
 namespace SmartHome
 {
-    class Driver : IDriver
+    public class Driver : IDriver
     {
         
         Dictionary<String, Device> deviceMap = new Dictionary<String, Device>();

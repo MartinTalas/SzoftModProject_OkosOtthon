@@ -8,7 +8,7 @@ using System.IO;
 
 namespace SmartHome
 {
-    class Monitor:IMonitor
+    public class Monitor:IMonitor
     {
         private const char V = '}';
 

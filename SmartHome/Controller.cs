@@ -10,8 +10,8 @@ namespace SmartHome
         private Loader loader = new Loader();
         private Subscribers subscribers = new Subscribers();
         private Timer refresher=new Timer();
-        private Monitor monitor = new Monitor();
-        private Driver driver = new Driver();
+        private IMonitor monitor = new Monitor();
+        private IDriver driver = new Driver();
 
         public Controller()
         {

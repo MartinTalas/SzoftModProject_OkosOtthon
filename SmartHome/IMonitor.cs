@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome
 {
-    interface IMonitor
+    public interface IMonitor
     {
         public Session getSession(string homeId);
     }
