@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome
 {
-    interface IDriver
+    public interface IDriver
     {
         public int sendCommand(Subscriber subs, bool boiler, bool ac);
     }
