@@ -13,9 +13,26 @@ namespace SmartHome
     {
         
         Dictionary<String, Device> deviceMap = new Dictionary<String, Device>();
+        [Serializable]
+        public class BadInputException : Exception 
+        {
+            const string msg="HIBA: A driver bemeneti fályla nem megfelelő formátomu";
+            public BadInputException():base(msg)
+            {
+                
+            }
+            public BadInputException(string missing) : base(msg+": "+missing+"-hiányzik\n")
+            {
 
+            }
+            public BadInputException(string missing,string device) : base(msg + ": " + missing + "-hiányzik a(z)"+device+"-nak\n")
+            {
+
+            }
+        }
         public Driver()
         {
+            /*
             deviceMap.Add("Boiler 1200W", new Device("Boiler 1200W", "bX3434", "bX1232"));
             deviceMap.Add("Boiler p5600", new Device("Boiler p5600", "cX7898", "cX3452"));
             deviceMap.Add("Boiler tw560", new Device("Boiler tw560", "dX3422", "dX111"));
@@ -24,6 +41,45 @@ namespace SmartHome
             deviceMap.Add("Air p5600", new Device("Air p5600", "bX5676", "bX3421"));
             deviceMap.Add("Air c320", new Device("Air c320", "cX3452", "cX5423"));
             deviceMap.Add("Air rk110", new Device("Air rk110", "eX1111", "eX2222"));
+            */
+            StreamReader stream = new StreamReader("devices.txt");
+            stream.ReadLine();
+            int sor=0;
+            while (!stream.EndOfStream)
+            {
+                string line = stream.ReadLine();
+                if (line != String.Empty && !line.Contains(":"))
+                {
+                    string start = stream.ReadLine();
+                    string stop = stream.ReadLine();
+
+                    if (start.Contains("START") && stop.Contains("STOP"))
+                    {
+                        line = line.Trim().Trim('"');
+                        start = start.Split(',')[1].Trim().Trim('"');
+                        stop = stop.Split(',')[1].Trim().Trim('"');
+                        deviceMap.Add(line, new Device(line, start, stop));
+                    }
+                    else
+                    {
+                        if (!start.Contains("START"))
+                        {
+                            throw new BadInputException("START",line);
+                        }    
+                        if(!stop.Contains("STOP"))
+                        {
+                            throw new BadInputException("STOP", line);
+                        }
+                    }
+                }
+                sor++;
+            }
+            /*
+            foreach(string key in deviceMap.Keys)
+            {
+                Console.WriteLine("{0}: Start:{1}, Stop:{2}",key, deviceMap[key].commandTurnOn, deviceMap[key].commandTurnOff);
+            }
+            */
         }
 
         class Command
