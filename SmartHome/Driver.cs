@@ -30,6 +30,7 @@ namespace SmartHome
 
             }
         }
+
         public Driver()
         {
             /*
@@ -98,26 +99,33 @@ namespace SmartHome
 
         public int sendCommand(Subscriber subs, bool boiler, bool ac)
         {
-            string boilerCommand; 
-            string airConditionerCommand;
+            string boilerCommand=""; 
+            string airConditionerCommand="";
 
-            if (boiler)
+            if (subs.boilerType != String.Empty)
             {
-                boilerCommand = deviceMap[subs.boilerType].commandTurnOn;
-            }
-            else
-            {
-                boilerCommand = deviceMap[subs.boilerType].commandTurnOff;
+                if (boiler)
+                {
+                    boilerCommand = deviceMap[subs.boilerType].commandTurnOn;
+                }
+                else
+                {
+                    boilerCommand = deviceMap[subs.boilerType].commandTurnOff;
+                }
             }
 
-            if (ac)
+            if(subs.airConditionerType!=String.Empty)
             {
-                airConditionerCommand = deviceMap[subs.airConditionerType].commandTurnOn;
+                if (ac)
+                {
+                    airConditionerCommand = deviceMap[subs.airConditionerType].commandTurnOn;
+                }
+                else
+                {
+                    airConditionerCommand = deviceMap[subs.airConditionerType].commandTurnOff;
+                }
             }
-            else
-            {
-                airConditionerCommand = deviceMap[subs.airConditionerType].commandTurnOff;
-            }
+            
 
             string url = "http://193.6.19.58:8182/smarthome/" + subs.homeId;
             WebRequest request = WebRequest.Create(url);
@@ -125,7 +133,7 @@ namespace SmartHome
             request.Method = "POST";
 
             string json_string =JsonSerializer.Serialize(new Command(subs.homeId, boilerCommand, airConditionerCommand));
-            Console.WriteLine(json_string);
+            //Console.WriteLine(json_string);
 
             using (var stream = request.GetRequestStream())
             {
@@ -141,20 +149,11 @@ namespace SmartHome
                 
                 result = new StreamReader(httpResponse.GetResponseStream());
                 resultint = Convert.ToInt32(result.ReadToEnd());
-                /*
-                Console.WriteLine(resultint);
-                */
             }
             catch (WebException ex)
             {
                 httpResponse = (HttpWebResponse)ex.Response;
-                /*
-                Console.WriteLine(httpResponse.StatusDescription);
-                Console.WriteLine(httpResponse.StatusCode);
-                Console.WriteLine(httpResponse.ContentLength);
-                Console.WriteLine(resultint);
-                Console.WriteLine(ex.Message);
-                */
+                //Console.WriteLine((HttpWebResponse)ex.Response);
             }
             return resultint;
         }
