@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome
 {
-    class Temperature
+    public class Temperature
     {
         public string period
         {

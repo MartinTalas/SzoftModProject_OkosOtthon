@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SmartHome
 {
-    interface ILoader
+    public interface ILoader
     {
         public Subscribers loadSubscribers();
     }

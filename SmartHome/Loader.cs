@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace SmartHome
 {
-    class Loader : ILoader
+    public class Loader : ILoader
     {
         private const string file_name = "subscriberdata.json";
         private Subscribers loaded_subscribers = new Subscribers();

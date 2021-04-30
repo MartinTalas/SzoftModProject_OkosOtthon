@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome
 {
-    class Subscriber
+    public class Subscriber
     {
         public string subscriber
         {
