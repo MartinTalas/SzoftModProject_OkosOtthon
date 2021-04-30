@@ -15,7 +15,6 @@ namespace SmartHome
             this.devicename = devicename;
             this.commandTurnOn = commandTurnOn;
             this.commandTurnOff = commandTurnOff;
-            
         }
     }
 }

@@ -19,6 +19,7 @@ namespace SmartHome
             deviceMap.Add("Boiler 1200W", new Device("Boiler 1200W", "bX3434", "bX1232"));
             deviceMap.Add("Boiler p5600", new Device("Boiler p5600", "cX7898", "cX3452"));
             deviceMap.Add("Boiler tw560", new Device("Boiler tw560", "dX3422", "dX111"));
+            deviceMap.Add("Boiler 1400L", new Device("Boiler tw560", "kx8417", "kx4823"));
 
             deviceMap.Add("Air p5600", new Device("Air p5600", "bX5676", "bX3421"));
             deviceMap.Add("Air c320", new Device("Air c320", "cX3452", "cX5423"));
@@ -84,16 +85,20 @@ namespace SmartHome
                 
                 result = new StreamReader(httpResponse.GetResponseStream());
                 resultint = Convert.ToInt32(result.ReadToEnd());
+                /*
                 Console.WriteLine(resultint);
+                */
             }
             catch (WebException ex)
             {
                 httpResponse = (HttpWebResponse)ex.Response;
+                /*
                 Console.WriteLine(httpResponse.StatusDescription);
                 Console.WriteLine(httpResponse.StatusCode);
                 Console.WriteLine(httpResponse.ContentLength);
                 Console.WriteLine(resultint);
                 Console.WriteLine(ex.Message);
+                */
             }
             return resultint;
         }
