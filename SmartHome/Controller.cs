@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace SmartHome
 {
-    class Controller
+    public class Controller
     {
         private Loader loader = new Loader();
         private Subscribers subscribers = new Subscribers();

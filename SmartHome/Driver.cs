@@ -99,8 +99,13 @@ namespace SmartHome
 
         public int sendCommand(Subscriber subs, bool boiler, bool ac)
         {
-            string boilerCommand=""; 
-            string airConditionerCommand="";
+            string boilerCommand=" "; 
+            string airConditionerCommand= " ";
+
+            if (subs.boilerType == String.Empty&&subs.airConditionerType == String.Empty)
+            {
+                return 102;
+            }
 
             if (subs.boilerType != String.Empty)
             {
@@ -146,7 +151,6 @@ namespace SmartHome
             try
             {
                 httpResponse = (HttpWebResponse)request.GetResponse();
-                
                 result = new StreamReader(httpResponse.GetResponseStream());
                 resultint = Convert.ToInt32(result.ReadToEnd());
             }
