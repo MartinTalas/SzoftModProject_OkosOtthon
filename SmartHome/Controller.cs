@@ -29,51 +29,58 @@ namespace SmartHome
         }
         private void monitorReqest()
         {
-            foreach (Subscriber sub in subscribers.subscribers)
+            if (subscribers.subscribers != null)
             {
-                Session session = monitor.getSession(sub.homeId);
-                //string[] split = t.period.Split('-');
-                //int start = Convert.ToInt32(split[0]);
-                //int end = Convert.ToInt32(split[1]);
-                int min = Convert.ToInt32(DateTime.Now.ToString("mm"));
-                int hour = Convert.ToInt32(DateTime.Now.ToString("HH"));
-                foreach (Temperature t in sub.temperatures)
+                foreach (Subscriber sub in subscribers.subscribers)
                 {
-                    string[] split = t.period.Split('-');
-                    int start = Convert.ToInt32(split[0]);
-                    int end = Convert.ToInt32(split[1]);
-
-                    if (start <= hour && hour < end)
+                    Session session = monitor.getSession(sub.homeId);
+                    //string[] split = t.period.Split('-');
+                    //int start = Convert.ToInt32(split[0]);
+                    //int end = Convert.ToInt32(split[1]);
+                    int min = Convert.ToInt32(DateTime.Now.ToString("mm"));
+                    int hour = Convert.ToInt32(DateTime.Now.ToString("HH"));
+                    foreach (Temperature t in sub.temperatures)
                     {
-                        Console.WriteLine("period:{0}", t.period);
-                        Console.WriteLine("Elvart:{0}°C Mostani:{1}°C", t.temperature, session.temperature);
-                        double diff = Math.Abs(t.temperature - session.temperature);
-                        if(diff> (t.temperature*0.20))
+                        string[] split = t.period.Split('-');
+                        int start = Convert.ToInt32(split[0]);
+                        int end = Convert.ToInt32(split[1]);
+
+                        if (start <= hour && hour < end)
                         {
-                            Console.WriteLine("Hiba a rendszerben");
-                        }
-                        else if (diff > 0.2)
-                        {
-                            if (t.temperature > session.temperature)
+                            Console.WriteLine("period:{0}", t.period);
+                            Console.WriteLine("Elvart:{0}°C Mostani:{1}°C", t.temperature, session.temperature);
+                            double diff = Math.Abs(t.temperature - session.temperature);
+                            if (diff > (t.temperature * 0.20))
                             {
-                                Console.WriteLine("Aircon--");
-                                Console.WriteLine("Kazan++");
-                                Console.WriteLine(driver.sendCommand(sub, true, false));
+                                Console.WriteLine("Hiba a rendszerben");
                             }
-                            if (t.temperature < session.temperature)
+                            else if (diff > 0.2)
                             {
-                                Console.WriteLine("Aircon++");
-                                Console.WriteLine("Kazan--");
-                                Console.WriteLine(driver.sendCommand(sub, false, true));
+                                if (t.temperature > session.temperature)
+                                {
+                                    Console.WriteLine("Aircon--");
+                                    Console.WriteLine("Kazan++");
+                                    Console.WriteLine(driver.sendCommand(sub, true, false));
+                                }
+                                if (t.temperature < session.temperature)
+                                {
+                                    Console.WriteLine("Aircon++");
+                                    Console.WriteLine("Kazan--");
+                                    Console.WriteLine(driver.sendCommand(sub, false, true));
+                                }
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Nincs szükség beavatkozásra");
+                            else
+                            {
+                                Console.WriteLine("Nincs szükség beavatkozásra");
+                            }
                         }
                     }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong: [subscribers.subscribers -> empty list]");
             }
         }
     }

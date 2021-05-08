@@ -18,8 +18,15 @@ namespace SmartHome
 
         private void loadFromJson()
         {
-            string jsonString = File.ReadAllText(file_name);
-            this.loaded_subscribers = JsonSerializer.Deserialize<Subscribers>(jsonString);
+            try
+            {
+                string jsonString = File.ReadAllText(file_name);
+                this.loaded_subscribers = JsonSerializer.Deserialize<Subscribers>(jsonString);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Something went wrong: [{0}]", e.Message);
+            }
         }
 
         public override string ToString()
