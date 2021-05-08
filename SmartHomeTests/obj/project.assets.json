@@ -5904,34 +5904,39 @@
     ]
   },
   "packageFolders": {
-    "D:\\Users\\AdamBeer\\.nuget\\packages\\": {}
+    "C:\\Users\\marti\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT\\SzoftModProject_OkosOtthon\\SmartHomeTests\\SmartHomeTests.csproj",
+      "projectUniqueName": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHomeTests\\SmartHomeTests.csproj",
       "projectName": "SmartHomeTests",
-      "projectPath": "C:\\GIT\\SzoftModProject_OkosOtthon\\SmartHomeTests\\SmartHomeTests.csproj",
-      "packagesPath": "D:\\Users\\AdamBeer\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT\\SzoftModProject_OkosOtthon\\SmartHomeTests\\obj\\",
+      "projectPath": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHomeTests\\SmartHomeTests.csproj",
+      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHomeTests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "D:\\Users\\AdamBeer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "D:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": ".NETCoreApp,Version=v3.1",
           "projectReferences": {
-            "C:\\GIT\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {
-              "projectPath": "C:\\GIT\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj"
+            "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj": {
+              "projectPath": "C:\\Users\\marti\\OneDrive\\Dokumentumok\\GitHub\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj"
             }
           }
         }
@@ -5978,7 +5983,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
