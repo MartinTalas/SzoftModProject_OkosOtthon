@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SmartHome;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartHomeTests
+namespace SmartHome.Tests
 {
-    class LoaderTests
+    [TestClass()]
+    public class LoaderTests
     {
+        [TestMethod()]
+        public void loadSubscribersTest()
+        {
+            Assert.Fail();
+        }
     }
 }

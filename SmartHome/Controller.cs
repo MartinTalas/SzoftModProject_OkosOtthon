@@ -28,7 +28,7 @@ namespace SmartHome
             monitorReqest();
         }
         private void monitorReqest()
-        {
+        { 
             foreach (Subscriber sub in subscribers.subscribers)
             {
                 Session session = monitor.getSession(sub.homeId);

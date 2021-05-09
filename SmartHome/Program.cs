@@ -23,7 +23,7 @@ namespace SmartHome
             Subscribers debug_subscribers = debug_loader.loadSubscribers();
 
 
-            //Console.WriteLine(d.sendCommand(debug_subscribers.subscribers[0], true, true));
+            Console.WriteLine(d.sendCommand(debug_subscribers.subscribers[0], true, true));
 
             //DEBUG
             //Console.WriteLine(debug_loader.ToString());

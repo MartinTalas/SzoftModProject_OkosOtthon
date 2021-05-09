@@ -43,6 +43,7 @@ namespace SmartHome
             deviceMap.Add("Air c320", new Device("Air c320", "cX3452", "cX5423"));
             deviceMap.Add("Air rk110", new Device("Air rk110", "eX1111", "eX2222"));
             */
+
             StreamReader stream = new StreamReader("devices.txt");
             stream.ReadLine();
             int sor=0;
@@ -138,7 +139,7 @@ namespace SmartHome
             request.Method = "POST";
 
             string json_string =JsonSerializer.Serialize(new Command(subs.homeId, boilerCommand, airConditionerCommand));
-            //Console.WriteLine(json_string);
+            Console.WriteLine(json_string);
 
             using (var stream = request.GetRequestStream())
             {
