@@ -1,18 +1,41 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SmartHome;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SmartHome;
 
-namespace SmartHome.Tests
+namespace SmartHomeTests
 {
     [TestClass()]
-    public class LoaderTests
+    class LoaderTests
     {
         [TestMethod()]
         public void loadSubscribersTest()
         {
-            Assert.Fail();
+
+            Subscribers loaded_subscribers = new Subscribers();
+            Loader loader = new Loader();
+            loaded_subscribers = loader.loadSubscribers();
+
+            //hibátlan adatokkal
+            Assert.IsTrue(loaded_subscribers.subscribers[0].homeId == "KD34AF24DS");
+
+            //hibás adatokkal
+            //Assert.IsFalse(loaded_subscribers.subscribers[0].homeId == "KD34AF24DS");
+
+
+            //hibás filename-el
+            //Assert.IsTrue(loaded_subscribers.subscribers == null);
+        }
+
+        [TestMethod()]
+        public void ToStringTest()
+        {
+            Subscribers loaded_subscribers = new Subscribers();
+            Loader loader = new Loader();
+            loaded_subscribers = loader.loadSubscribers();
+
+            Assert.IsNotNull(loader.ToString());
         }
     }
 }
