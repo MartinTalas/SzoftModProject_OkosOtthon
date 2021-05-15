@@ -12,7 +12,10 @@ namespace SmartHome.Tests
         [TestMethod()]
         public void getSessionTest()
         {
-            Assert.Fail();
+            Monitor m = new Monitor();
+            Session s = m.getSession("");
+            Assert.IsNull(s);
+            //Assert.IsNull(s);
         }
     }
 }

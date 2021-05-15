@@ -1,0 +1,4 @@
+Dátum: 2021. 05. 15. 16:53:51	Elvárt hőmérséklet: 23°C	Kapott hőmérséklet: 18°C
+Dátum: 2021. 05. 15. 16:54:05	Elvárt hőmérséklet: 23°C	Kapott hőmérséklet: 16°C
+Dátum: 2021. 05. 15. 16:54:05	Elvárt hőmérséklet: 20°C	Kapott hőmérséklet: 15°C
+Dátum: 2021. 05. 15. 16:55:45	Elvárt hőmérséklet: 21,5°C	Kapott hőmérséklet: 15°C

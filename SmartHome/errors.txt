@@ -1,0 +1,17 @@
+System.IndexOutOfRangeException
+  HResult=0x80131508
+  Message=Index was outside the bounds of the array.
+  Source=SmartHome
+  StackTrace:
+   at SmartHome.Monitor.getSession(String home_id) in E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\Monitor.cs:line 44
+   at SmartHome.Program.Main(String[] args) in E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\Program.cs:line 11
+
+
+
+
+System.NullReferenceException
+  HResult=0x80004003
+  Message=Object reference not set to an instance of an object.
+  Source=SmartHome
+  StackTrace:
+   at SmartHome.Program.Main(String[] args) in E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\Program.cs:line 26

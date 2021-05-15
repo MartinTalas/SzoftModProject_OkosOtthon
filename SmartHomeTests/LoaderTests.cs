@@ -18,10 +18,10 @@ namespace SmartHomeTests
             loaded_subscribers = loader.loadSubscribers();
 
             //hibátlan adatokkal
-            Assert.IsTrue(loaded_subscribers.subscribers[0].homeId == "KD34AF24DS");
+            //Assert.IsTrue(loaded_subscribers.subscribers[0].homeId == "KD34AF24DS");
 
             //hibás adatokkal
-            //Assert.IsFalse(loaded_subscribers.subscribers[0].homeId == "KD34AF24DS");
+            //Assert.IsTrue(loaded_subscribers.subscribers == null);
 
 
             //hibás filename-el
