@@ -49,3 +49,4 @@ E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\obj\Debug\netcoreapp3.1\Sm
 E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\obj\Debug\netcoreapp3.1\SmartHome.dll
 E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\obj\Debug\netcoreapp3.1\SmartHome.pdb
 E:\git\SzoftModProject_OkosOtthon\SmartHome_elbasszuk\obj\Debug\netcoreapp3.1\SmartHome.genruntimeconfig.cache
+C:\Users\marti\OneDrive\Dokumentumok\GitHub\SzoftModProject_OkosOtthon\SmartHome\obj\Debug\netcoreapp3.1\SmartHome.csprojAssemblyReference.cache
