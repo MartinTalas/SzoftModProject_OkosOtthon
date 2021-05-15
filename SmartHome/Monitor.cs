@@ -44,10 +44,17 @@ namespace SmartHome
                     bemenet_2.Add(bemenet[i].Split(':')[1]);
                 }
 
+                
+
                 s.sessionId = bemenet_2[0].Trim('"');
                 s.temperature = Convert.ToDouble(bemenet_2[1].Replace(".", ","));
                 s.boilerState = Convert.ToBoolean(bemenet_2[2]);
                 s.airConditionerState = Convert.ToBoolean(bemenet_2[3].Trim(V));
+
+                if (s.sessionId == "null")
+                {
+                    return null;
+                }
 
                 return s;
 

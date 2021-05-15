@@ -14,7 +14,8 @@ namespace SmartHome.Tests
         {
             Monitor m = new Monitor();
             Session s = m.getSession("");
-            Assert.IsNotNull(s);
+            Assert.IsNull(s);
+            //Assert.IsNull(s);
         }
     }
 }
