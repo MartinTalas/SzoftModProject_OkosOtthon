@@ -34,6 +34,12 @@ namespace SmartHome
                 foreach (Subscriber sub in subscribers.subscribers)
                 {
                     Session session = monitor.getSession(sub.homeId);
+                    if (session == null)
+                    {
+                        Console.WriteLine("Something went wrong");
+                        continue;
+                    }
+
                     //string[] split = t.period.Split('-');
                     //int start = Convert.ToInt32(split[0]);
                     //int end = Convert.ToInt32(split[1]);
@@ -48,31 +54,40 @@ namespace SmartHome
                         if (start <= hour && hour < end)
                         {
                             Console.WriteLine("period:{0}", t.period);
-                            Console.WriteLine("Elvart:{0}°C Mostani:{1}°C", t.temperature, session.temperature);
-                            double diff = Math.Abs(t.temperature - session.temperature);
-                            if (diff > (t.temperature * 0.20))
+
+                            try
                             {
-                                Console.WriteLine("Hiba a rendszerben");
-                            }
-                            else if (diff > 0.2)
-                            {
-                                if (t.temperature > session.temperature)
+                                //Console.WriteLine("Elvart:{0}°C Mostani:{1}°C", t.temperature, session.temperature);
+                                double diff = Math.Abs(t.temperature - session.temperature);
+                                if (diff > (t.temperature * 0.20))
                                 {
-                                    Console.WriteLine("Aircon--");
-                                    Console.WriteLine("Kazan++");
-                                    Console.WriteLine(driver.sendCommand(sub, true, false));
+                                    Console.WriteLine("Hiba a rendszerben");
                                 }
-                                if (t.temperature < session.temperature)
+                                else if (diff > 0.2)
                                 {
-                                    Console.WriteLine("Aircon++");
-                                    Console.WriteLine("Kazan--");
-                                    Console.WriteLine(driver.sendCommand(sub, false, true));
+                                    if (t.temperature > session.temperature)
+                                    {
+                                        Console.WriteLine("Aircon--");
+                                        Console.WriteLine("Kazan++");
+                                        Console.WriteLine(driver.sendCommand(sub, true, false));
+                                    }
+                                    if (t.temperature < session.temperature)
+                                    {
+                                        Console.WriteLine("Aircon++");
+                                        Console.WriteLine("Kazan--");
+                                        Console.WriteLine(driver.sendCommand(sub, false, true));
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Nincs szükség beavatkozásra");
                                 }
                             }
-                            else
+                            catch(Exception e)
                             {
-                                Console.WriteLine("Nincs szükség beavatkozásra");
+                                Console.WriteLine(e.Message);
                             }
+                            
                         }
                     }
                     Console.WriteLine();

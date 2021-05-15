@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zBXERmMruLkwwuIRFtGJc0zS/N+KmIEWJAo8uzN7AkTljPUHZc11yenaXhKWfufciOMBTkCjFeZYHlediZoAdA==",
+  "dgSpecHash": "hxYVNQf2+u2rO4Jfgz5PfDExRTijPRpBGo5GhL8DehUyLmRkXcXHba70SzPhvY/stwLJbKHSaIW53hTb5ywDbw==",
   "success": true,
-  "projectFilePath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
+  "projectFilePath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome_elbasszuk\\SmartHome.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Beni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Beni\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

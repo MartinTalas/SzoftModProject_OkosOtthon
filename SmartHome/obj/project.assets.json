@@ -3040,11 +3040,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
+      "projectUniqueName": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome_elbasszuk\\SmartHome.csproj",
       "projectName": "SmartHome",
-      "projectPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\SmartHome.csproj",
+      "projectPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome_elbasszuk\\SmartHome.csproj",
       "packagesPath": "C:\\Users\\Beni\\.nuget\\packages\\",
-      "outputPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome\\obj\\",
+      "outputPath": "E:\\git\\SzoftModProject_OkosOtthon\\SmartHome_elbasszuk\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Beni\\AppData\\Roaming\\NuGet\\NuGet.Config",
