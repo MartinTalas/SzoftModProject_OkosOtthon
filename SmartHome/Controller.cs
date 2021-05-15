@@ -7,6 +7,7 @@ namespace SmartHome
 {
     public class Controller
     {
+        private Logger logger = new Logger();
         private Loader loader = new Loader();
         private Subscribers subscribers = new Subscribers();
         private Timer refresher=new Timer();
@@ -62,6 +63,7 @@ namespace SmartHome
                                 if (diff > (t.temperature * 0.20))
                                 {
                                     Console.WriteLine("Hiba a rendszerben");
+                                    logger.save(t.temperature, session.temperature);
                                 }
                                 else if (diff > 0.2)
                                 {
