@@ -18,8 +18,8 @@ namespace SmartHome
         {
             this.subscribers = this.loader.loadSubscribers();
 
-            refresher.Interval = 300000;
-            //refresher.Interval = 5000;
+            //refresher.Interval = 300000;
+            refresher.Interval = 500;
             refresher.Elapsed += new ElapsedEventHandler(monitorReqest);
             monitorReqest();
             refresher.Start();
@@ -82,7 +82,15 @@ namespace SmartHome
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Nincs szükség beavatkozásra");
+                                    if(session.airConditionerState||session.boilerState)
+                                    {
+                                        Console.WriteLine("Ezközök kikapcs");
+                                        Console.WriteLine(driver.sendCommand(sub, false, false));
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Nincs szükség beavatkozásra");
+                                    }
                                 }
                             }
                             catch(Exception e)
